@@ -28,7 +28,6 @@ MYBRO///KARWAN
 """
 
 def start():
-
 	print(aas)a = ("0770","0750","0771","0751","0772","0773")
 
 	op=open(".txt","w")
