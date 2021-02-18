@@ -7,21 +7,22 @@ os.system("clear")
 aas = """
 
 ╭━━━┳╮╱╭┳━━━┳━━━┳━━━╮
-┃╭━╮┃┃╱┃┃╭━╮┃╭━━┫╭━╮┃
-┃╰━━┫╰━╯┃┃╱┃┃╰━━┫┃╱┃┃
-╰━━╮┃╭━╮┃╰━╯┃╭━━┫┃╱┃┃
-┃╰━╯┃┃╱┃┃╭━╮┃┃╱╱┃╰━╯┃
-╰━━━┻╯╱╰┻╯╱╰┻╯╱╱╰━━━╯
 
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      
+┃╭━╮┃┃╱┃┃╭━╮┃╭━╮┃╭━╮┃
 
-CODING BY @SHAFO
+┃┃╱╰┫┃╱┃┃╰━╯┃┃╱╰┫┃╱┃┃
 
-NOTE>>LAQUZE XUSHKI U DAEKE AWA BM RO
+┃┃╭━┫┃╱┃┃╭╮╭┫┃╭━┫╰━╯┃
 
-ZHE LA ROZHAN BAXRAP BASM AKA
+┃╰┻━┃╰━╯┃┃┃╰┫╰┻━┃╭━╮┃
 
-MYBRO///KARWAN
+╰━━━┻━━━┻╯╰━┻━━━┻╯╱╰╯
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+
+Am Toola taybata badrws krdni raqa 4mlonraqam ba tekaly
+
+random asyawkorak drwsaka
 
  =============================
 
@@ -29,7 +30,7 @@ MYBRO///KARWAN
 
 def start():
 
-print a=("0770","0750","0771","0751","0772","0773")
+	print(aas)	a = ("0770","0750","0771","0751","0772","0773")
 
 	op=open(".txt","w")
 
