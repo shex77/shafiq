@@ -8,14 +8,16 @@ os.system("clear")
 aas = """
 
 ╭━━━┳╮╱╭┳━━━┳━━━┳━━━╮
-┃╭━╮┃┃╱┃┃╭━╮┃╭━╮┃╭━╮┃
-┃┃╱╰┫┃╱┃┃╰━╯┃┃╱╰┫┃╱┃┃
-┃┃╭━┫┃╱┃┃╭╮╭┫┃╭━┫╰━╯┃
-┃╰┻━┃╰━╯┃┃┃╰┫╰┻━┃╭━╮┃
-╰━━━┻━━━┻╯╰━┻━━━┻╯╱╰╯
+┃╭━╮┃┃╱┃┃╭━╮┃╭━━┫╭━╮┃
+┃╰━━┫╰━╯┃┃╱┃┃╰━━┫┃╱┃┃
+╰━━╮┃╭━╮┃╰━╯┃╭━━┫┃╱┃┃
+┃╰━╯┃┃╱┃┃╭━╮┃┃╱╱┃╰━╯┃
+╰━━━┻╯╱╰┻╯╱╰┻╯╱╱╰━━━╯
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
-Am Toola taybata badrws krdni raqa 4mlonraqam ba tekaly
-random asyawkorak drwsaka
+la quzi dayki awa bm rozhek baxrap
+basi krdum
+PROGRAMAR>>SHAFEQ
+MYBRO/KARO
  =============================
 """
 
