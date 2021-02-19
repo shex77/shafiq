@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 #coding=utf-8
-#The Credit For This Code Goes To TLYAK
+#DRUST KRAWA LALAYAN SHAFO
 #If You Wanna Take Credits For This Code, Please Look Yourself Again...
 #Reserved2020
 
@@ -110,15 +110,18 @@ def phone():
 		login()
 	os.system('clear')		
 
-#Dev:FUCK
+#Dev:SHAFO
 ##### LOGO #####
 logo = """
 
-   ___ _            __       
-  / _ \ |__   __ _ / _| ___  
- / /_\/ '_ \ / _` | |_ / _ \ 
-/ /_\\| | | | (_| |  _| (_) |
-\____/|_| |_|\__,_|_|  \___/ 
+  
+
+╭━━━┳╮╱╭┳━━━┳━━━┳━━━╮
+┃╭━╮┃┃╱┃┃╭━╮┃╭━━┫╭━╮┃
+┃╰━━┫╰━╯┃┃╱┃┃╰━━┫┃╱┃┃
+╰━━╮┃╭━╮┃╰━╯┃╭━━┫┃╱┃┃
+┃╰━╯┃┃╱┃┃╭━╮┃┃╱╱┃╰━╯┃
+╰━━━┻╯╱╰┻╯╱╰┻╯╱╱╰━━━╯ 
                              
 
 """
@@ -456,7 +459,7 @@ def pilih_super():
 		try:
 			os.mkdir('out')
 		except OSError:
-			pass #Dev:Mr DAEJEL
+			pass #Dev:SHAFO
 		try:													
 			a = requests.get('https://graph.facebook.com/'+user+'/?access_token='+toket)												
 			b = json.loads(a.text)												
@@ -665,11 +668,11 @@ def pilih_super():
 		
 	p = ThreadPool(30)
 	p.map(main, id)
-#Dev: Mr DAEJEL
-        print "\033[1;95¢-----------------\033[1;35mðŸ‘ºTLYAK\033[1;97m-----------------â€¢"
+#Dev: SHAFO
+        print "\033[1;95¢-----------------\033[1;35mðŸ‘ºSHAFO\033[1;97m-----------------â€¢"
 	print '\033[1;97m[+]\033[1;97m \033[1;32mProcess Has Been Completed\033[1;0m'
 	print"\033[1;95m[+]\033[1;95mTotal \033[1;95mOK/\x1b[1;95mCP \033[1;95m: \033[1;95m"+str(len(oks))+"\033[1;97m/\033[1;97m"+str(len(cekpoint))
-	print "\033[1;95m«-----------------\033[1;35m </>TLYAK</>\033[1;92m-----------------»"
+	print "\033[1;95m«-----------------\033[1;35m </>SHAFO</>\033[1;92m-----------------»"
 	print """
  \033[1;95m
 
