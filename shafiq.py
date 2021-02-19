@@ -1,102 +1,207 @@
-import random
+ 
 
-import string
+from time import sleep
 
-import itertools
+import requests
 
-import threading
+import uuid
 
-import time
+import re
 
-import sys
+import re
+
+uid = str(uuid.uuid4())
+
+print(uid)
+
+cr1 = requests.session()
+
+counter = 0
+
+listq = open('acc.txt',"r").read().splitlines()
+
+def clo():
+
+  input('Press Enter To Close ...')
+
+  exit(0)
+
+qwe = {
+
+    'User-Agent': 'Instagram 113.0.0.39.122 Android (24/5.0; 515dpi;1440x2416; huawei/google; Nexus 6P; angler; angler; en_US)',
+
+    "Accept": "*/*",
+
+    "Accept-Encoding": "gzip, deflate",
+
+    "Accept-Language": "en-US",
+
+    "X-IG-Capabilities": "3brTvw==",
+
+    "X-IG-Connection-Type": "WIFI",
+
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+
+    'Host': 'i.instagram.com'
+
+}
+
+def gpid(url):
+
+  try:
+
+    d =re.search(r'"id":"(.*?)"' , requests.get(url).text).group(1)
+
+    print(d)
+
+    return d
+
+  except:
+
+    print('Faild To Get Post Id')
+
+    clo()
 
  
 
-done = False
+ 
 
-#here is the animation
+def l12(user,Pass):
 
-def animate():
+  cr1_l = "https://i.instagram.com/api/v1/accounts/login/"
 
-    for c in itertools.cycle(['|', '/', '-', '\\']):
+  cr ={
 
-        if done:
+        'uuid': uid,
 
-            break
+        'password': Pass,
 
-        sys.stdout.write('\rloading ' + c)
+        'username': user,
 
-        sys.stdout.flush()
+        'device_id': uid,
 
-        time.sleep(0.1)
+        'from_reg': 'false',
 
-    sys.stdout.write('\rReady!     ')
+        '_csrftoken': 'missing',
+
+        'login_attempt_count': '0'
+
+  }
+
+  login = cr1.post(cr1_l,data=cr, headers=qwe).text
+
+  if ('"logged_in_user"') in login:
+
+    print('Logged in As @{}'.format(user))
+
+    return True   
+
+  elif("Incorrect Username") in login:
+
+    print("The username you entered doesn't appear to belong to an account. Please check your username and try again.")
+
+  elif('Incorrect password') in login:
+
+    print("The password you entered is incorrect. Please try again.")
+
+  elif ('"inactive user"') in login:
+
+    print('Your account has been disabled for violating our terms. Learn how you may be able to restore your account.')
+
+  elif ('checkpoint_challenge_required') in login:
+
+    print('Secure !')
+
+  else: 
+
+    print(login)
 
  
 
-t = threading.Thread(target=animate)
+def lo2t():
+
+    logout_url = 'https://i.instagram.com/api/v1/accounts/logout/'
+
+    logout = cr1.post(logout_url , headers=qwe).text
+
+    if('{"status": "ok"}') in logout:
+
+        pass
+
+    else:
+
+        print(f'Logged Out Faild')
 
  
 
-print(""" 
+ 
 
-╭━━━┳╮╱╭┳━━━┳━━━┳━━━╮
-┃╭━╮┃┃╱┃┃╭━╮┃╭━━┫╭━╮┃
-┃╰━━┫╰━╯┃┃╱┃┃╰━━┫┃╱┃┃
-╰━━╮┃╭━╮┃╰━╯┃╭━━┫┃╱┃┃
-┃╰━╯┃┃╱┃┃╭━╮┃┃╱╱┃╰━╯┃
-╰━━━┻╯╱╰┻╯╱╰┻╯╱╱╰━━━╯
+def crona_vuris(com):
 
-                                            
+  global pstid , counter
 
-""")                                                                                  
+  u = f'https://i.instagram.com/api/v1/media/{pstid}/comment/'
 
-A = """
+  awdi = {
 
-<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>
+        '_uuid': uid,
 
-<      snapchat.com/add/br35308        >
+        '_uid': uid,
 
-<      instagram/sha_fo_ka        >
+        '_csrftoken': 'missing',
 
-<      PROGRAMING/SHAFO           >
+        'comment_text': com
 
-<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>
+    }
+
+  while True:
+
+    r = cr1.post(u , data=awdi , headers=qwe).text
+
+    if ('"status": "ok"') in r:
+
+      counter +=1
+
+      print('Done : {}'.format(counter))
+
+    else:
+
+      print('switching account')
+
+      lo2t()
+
+      break
+
+    sleep(slp)
 
  
 
-"""
-
-print ("")
-
-print(A)
-
-t.start()
-
-time.sleep(1)
-
-done = True
-
  
 
-t = 0
+pstid = gpid(input('Link : '))
 
-userT = input(' : ')
+slp = int(input('sleep : '))
 
-lengthPrint = int(input('How many times: '))
+com1 = input('Comment : ')
 
-file = open('usernames.txt', 'w')
+while True:
 
- 
+  for x in listq:
 
-while t != lengthPrint:
+    user = x.split(':')[0]
 
-  x=userT
+    pr = x.split(':')[1]
 
-  file.write(str(x) +'\r\n')
+    print(user)
 
-  t = t + 1
+    print(pr)
 
- 
+    if l12(user,pr):
 
-file.close()
+      crona_vuris(com1)
+
+    else:
+
+        sleep(4)
+
+        pass
