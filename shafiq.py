@@ -1,207 +1,249 @@
+import pygame
+
+import time
+
+import random
+
  
 
-from time import sleep
+pygame.init()
 
-import requests
+ 
 
-import uuid
+white = (255, 255, 255)
 
-import re
+yellow = (255, 255, 102)
 
-import re
+black = (0, 0, 0)
 
-uid = str(uuid.uuid4())
+red = (213, 50, 80)
 
-print(uid)
+green = (0, 255, 0)
 
-cr1 = requests.session()
+blue = (50, 153, 213)
 
-counter = 0
+ 
 
-listq = open('acc.txt',"r").read().splitlines()
+dis_width = 500
 
-def clo():
+dis_height = 500
 
-  input('Press Enter To Close ...')
+ 
 
-  exit(0)
+dis = pygame.display.set_mode((dis_width, dis_height))
 
-qwe = {
+border=(0,0,500,500)
 
-    'User-Agent': 'Instagram 113.0.0.39.122 Android (24/5.0; 515dpi;1440x2416; huawei/google; Nexus 6P; angler; angler; en_US)',
+ 
 
-    "Accept": "*/*",
+clock = pygame.time.Clock()
 
-    "Accept-Encoding": "gzip, deflate",
+ 
 
-    "Accept-Language": "en-US",
+snake_block = 10
 
-    "X-IG-Capabilities": "3brTvw==",
+snake_speed = 9
 
-    "X-IG-Connection-Type": "WIFI",
+ 
 
-    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+font_style = pygame.font.SysFont("bahnschrift", 25)
 
-    'Host': 'i.instagram.com'
+ 
 
-}
+def our_snake(snake_block, snake_list):
 
-def gpid(url):
+    for x in snake_list:
 
-  try:
+        pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
 
-    d =re.search(r'"id":"(.*?)"' , requests.get(url).text).group(1)
-
-    print(d)
-
-    return d
-
-  except:
-
-    print('Faild To Get Post Id')
-
-    clo()
+        pygame.draw.rect(dis,(0, 0, 255),border,5)
 
  
 
  
 
-def l12(user,Pass):
+def message(msg, color):
 
-  cr1_l = "https://i.instagram.com/api/v1/accounts/login/"
+    mesg = font_style.render(msg, True, color)
 
-  cr ={
+    dis.blit(mesg, [200, 150])
 
-        'uuid': uid,
+def Score(score, color):
 
-        'password': Pass,
+    Sco = font_style.render(score, True, color)
 
-        'username': user,
+    dis.blit(Sco, [100, 50])
 
-        'device_id': uid,
+    
 
-        'from_reg': 'false',
+def gameLoop():
 
-        '_csrftoken': 'missing',
+    
 
-        'login_attempt_count': '0'
+    game_over = False
 
-  }
-
-  login = cr1.post(cr1_l,data=cr, headers=qwe).text
-
-  if ('"logged_in_user"') in login:
-
-    print('Logged in As @{}'.format(user))
-
-    return True   
-
-  elif("Incorrect Username") in login:
-
-    print("The username you entered doesn't appear to belong to an account. Please check your username and try again.")
-
-  elif('Incorrect password') in login:
-
-    print("The password you entered is incorrect. Please try again.")
-
-  elif ('"inactive user"') in login:
-
-    print('Your account has been disabled for violating our terms. Learn how you may be able to restore your account.')
-
-  elif ('checkpoint_challenge_required') in login:
-
-    print('Secure !')
-
-  else: 
-
-    print(login)
+    game_close = False
 
  
 
-def lo2t():
+    x1 = dis_width / 2
 
-    logout_url = 'https://i.instagram.com/api/v1/accounts/logout/'
+    y1 = dis_height / 2
 
-    logout = cr1.post(logout_url , headers=qwe).text
+ 
 
-    if('{"status": "ok"}') in logout:
+    x1_change = 0
 
-        pass
+    y1_change = 0
 
-    else:
+ 
 
-        print(f'Logged Out Faild')
+    snake_List = []
+
+    Length_of_snake = 1
+
+ 
+
+    foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
+
+    foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
+
+ 
+
+    while not game_over:
+
+ 
+
+        while game_close == True:
+
+            dis.fill(yellow)
+
+            message("Game Over ! P-Play or Q-Quit", red)
+
+ 
+
+            pygame.display.update()
+
+ 
+
+            for event in pygame.event.get():
+
+                if event.type == pygame.KEYDOWN:
+
+                    if event.key == pygame.K_q:
+
+                        game_over = True
+
+                        game_close = False
+
+                    if event.key == pygame.K_p:
+
+                        gameLoop()
+
+ 
+
+        for event in pygame.event.get():
+
+            if event.type == pygame.QUIT:
+
+                game_over = True
+
+            if event.type == pygame.KEYDOWN:
+
+                if event.key == pygame.K_f:
+
+                    x1_change = -snake_block
+
+                    y1_change = 0
+
+                elif event.key == pygame.K_h:
+
+                    x1_change = snake_block
+
+                    y1_change = 0
+
+                elif event.key == pygame.K_t:
+
+                    y1_change = -snake_block
+
+                    x1_change = 0
+
+                elif event.key == pygame.K_c:
+
+                    y1_change = snake_block
+
+                    x1_change = 0
+
+ 
+
+        if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 < 0:
+
+            game_close = True
+
+        x1 += x1_change
+
+        y1 += y1_change
+
+        dis.fill(yellow)
+
+        pygame.draw.rect(dis, red, [foodx, foody, snake_block, snake_block])
+
+        snake_Head = []
+
+        snake_Head.append(x1)
+
+        snake_Head.append(y1)
+
+        snake_List.append(snake_Head)
+
+        if len(snake_List) > Length_of_snake:
+
+            del snake_List[0]
+
+ 
+
+        for x in snake_List[:-1]:
+
+            if x == snake_Head:
+
+                game_close = True
+
+ 
+
+        our_snake(snake_block, snake_List)
 
  
 
  
 
-def crona_vuris(com):
+        pygame.display.update()
 
-  global pstid , counter
+ 
 
-  u = f'https://i.instagram.com/api/v1/media/{pstid}/comment/'
+        if x1 == foodx and y1 == foody:
 
-  awdi = {
+            Score("GOOOOOOD", green)
 
-        '_uuid': uid,
+            foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
 
-        '_uid': uid,
+            foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
 
-        '_csrftoken': 'missing',
+            Length_of_snake += 1
 
-        'comment_text': com
+            pygame.display.update()
 
-    }
+ 
 
-  while True:
+        clock.tick(snake_speed)
 
-    r = cr1.post(u , data=awdi , headers=qwe).text
+ 
 
-    if ('"status": "ok"') in r:
+    pygame.quit()
 
-      counter +=1
-
-      print('Done : {}'.format(counter))
-
-    else:
-
-      print('switching account')
-
-      lo2t()
-
-      break
-
-    sleep(slp)
+    quit()
 
  
 
  
 
-pstid = gpid(input('Link : '))
-
-slp = int(input('sleep : '))
-
-com1 = input('Comment : ')
-
-while True:
-
-  for x in listq:
-
-    user = x.split(':')[0]
-
-    pr = x.split(':')[1]
-
-    print(user)
-
-    print(pr)
-
-    if l12(user,pr):
-
-      crona_vuris(com1)
-
-    else:
-
-        sleep(4)
-
-        pass
+gameLoop()
