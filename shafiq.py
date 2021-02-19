@@ -1,11 +1,44 @@
 import random
-import os
 
+import string
 
+import itertools
 
-os.system("clear")
+import threading
 
-aas = """
+import time
+
+import sys
+
+ 
+
+done = False
+
+#here is the animation
+
+def animate():
+
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+
+        if done:
+
+            break
+
+        sys.stdout.write('\rloading ' + c)
+
+        sys.stdout.flush()
+
+        time.sleep(0.1)
+
+    sys.stdout.write('\rReady!     ')
+
+ 
+
+t = threading.Thread(target=animate)
+
+ 
+
+print(""" 
 
 ╭━━━┳╮╱╭┳━━━┳━━━┳━━━╮
 ┃╭━╮┃┃╱┃┃╭━╮┃╭━━┫╭━╮┃
@@ -13,51 +46,57 @@ aas = """
 ╰━━╮┃╭━╮┃╰━╯┃╭━━┫┃╱┃┃
 ┃╰━╯┃┃╱┃┃╭━╮┃┃╱╱┃╰━╯┃
 ╰━━━┻╯╱╰┻╯╱╰┻╯╱╱╰━━━╯
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
-la quzi dayki awa bm rozhek baxrap
-basi krdum
-PROGRAMAR>>SHAFEQ
-MYBRO/KARO
- =============================
+
+                                            
+
+""")                                                                                  
+
+A = """
+
+<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>
+
+<      snapchat.com/add/br35308        >
+
+<      instagram/sha_fo_ka        >
+
+<      PROGRAMING/SHAFO           >
+
+<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>
+
+ 
+
 """
 
-def start():
-	print(aas)
-	a = ("0770","0750","0771","0751","0772","0773")
-	op=open(".txt","w")
-	for x in range(4000000):
-		f = "1234567890"
-		x1 = random.choice(a)
-		x2 = random.choice(f)
-		x3 = random.choice(f)
-		x4 = random.choice(f)
-		x5 = random.choice(f)
-		x6 = random.choice(f)
-		x7 = random.choice(f)
-		x8 = random.choice(f)
-		x9 = random.choice(f)
-		x10 = random.choice(f)
-		x11 = random.choice(f)
-		
-		dd = x1+x2+x3+x4+x5+x6+x7+x8+x9+x10+x11
-		print(dd)
-		op.write(dd+"/n")
-		
+print ("")
 
-		
-def ss():
-	print(aas)
-	print("Tkaya bo das pekrdn [1]Lebda")
-	
-	f = int(input("[×] : "))
-	if f==1:
-		os.system("clear")
-		start()
-	else :
-		print("Tkaya Zhmara[1]Bnwsa")
-		
-ss()
-		
-		
-	
-	
+print(A)
+
+t.start()
+
+time.sleep(1)
+
+done = True
+
+ 
+
+t = 0
+
+userT = input('Enter user : ')
+
+lengthPrint = int(input('How many times: '))
+
+file = open('usernames.txt', 'w')
+
+ 
+
+while t != lengthPrint:
+
+  x=userT
+
+  file.write(str(x) +'\r\n')
+
+  t = t + 1
+
+ 
+
+file.close()
