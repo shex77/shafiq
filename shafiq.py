@@ -81,7 +81,7 @@ done = True
 
 t = 0
 
-userT = input('Enter user : ')
+userT = input('user bnusa : ')
 
 lengthPrint = int(input('How many times: '))
 
