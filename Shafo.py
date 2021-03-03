@@ -1,4 +1,4 @@
-import secrets, time,user_agent
+print ('shafo')
 import random , requests , uuid , sys
 from time import sleep
 
