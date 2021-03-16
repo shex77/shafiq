@@ -29,9 +29,9 @@ token = '1468816115:AAEIp-9MZhDzrAiUtU-52IUSGQB-jnqFfN0'
 logo=choice(["""{w}
    ^     . .     ^  
    \ \    V    / /  
-   \   \(+ +)/   / {r}({y}Programmer{r}){rr}━━━━━━━━━━{r}({y}ruks{r}){w} 
-   \   (  v  )   / {r}({y}Telegram{r}){rr}━━━━━━━━━{r}({y}@{D}{l}{B}{l}{B}{l}{w})
-    \____m_m____/   {r}({y}Free tool{r}/{y}RUKS{r}){rr}━━━━━━━{r}({y}V3{r}){w}
+   \   \(+ +)/   / {r}({y}Programmer{r}){rr}━━━━━━━━━━{r}({y}SH4FO{r}){w} 
+   \   (  v  )   / {r}({y}Telegram{r}){rr}━━━━━━━━━{r}({y}@{MR}{_}{S}{H}{A}{FO}{w})
+    \____m_m____/   {r}({y}Free tool{r}/{y}SHAFO{r}){rr}━━━━━━━{r}({y}V3{r}){w}
    <[___________]>
 
 """.format(r=ruks__,y=jruks,rr=_ruks,w=ruks_,D=rg,l=rf,B=ry),#@DIBIBl
@@ -47,38 +47,31 @@ logo=choice(["""{w}
  ::   ::   ::  :::: ::      ::    ::   :::  
 :    ::    :   :: : :       :      :   : :                                 
 {rr}𖢌{r} Programmer   {rr}:{y}ruks
-{rr}𖢌{r} Telegram     {rr}:{y}@{D}{l}{B}{l}{B}{l}
-{rr}𖢌{r} Free tool    {rr}:{y}V3{rr}/{y}ruks
+{rr}𖢌{r} Telegram     {rr}:{y}@{MR}{S}{H}{A}{F}{O}
+{rr}𖢌{r} Free tool    {rr}:{y}V3{rr}/{y}SHAFO
 {rr}𖢌{r} Last Update  {rr}:{y}N{rr}/{y}2021
 """.format(r=ruks__,y=jruks,rr=_ruks,w=ruks_,D=rg,l=rf,B=ry),
 """                                                 {y} 
-                        ___                     
-                       (   )                    
- ___ .-.     ___  ___   | |   ___       .--.    
-(   )   \   (   )(   )  | |  (   )    /  _  \   
- | ' .-. ;   | |  | |   | |  ' /     . .' `. ;  
- |  / (___)  | |  | |   | |,' /      | '   | |  
- | |         | |  | |   | .  '.      _\_`.(___) 
- | |         | |  | |   | | `. \    (   ). '.   
- | |         | |  ; '   | |   \ \    | |  `\ |  
- | |         ' `-'  /   | |    \ .   ; '._,' '  
-(___)         '.__.'   (___ ) (___)   '.___.'                  
-{rr}\\_{r}Programmer{rr}>{y}ruks
-{rr}\\_{r}Telegram{rr}>{y}@{D}{l}{B}{l}{B}{l}
+                        
+
+█▀ █░█ █░█ █▀▀ █▀█
+▄█ █▀█ ▀▀█ █▀░ █▄█
+{rr}\\_{r}Programmer{rr}>{y}SH4FO
+{rr}\\_{r}Telegram{rr}>{y}@{SH}{A}{F}{O}{O}{O}
 {rr}\\_{r}All-My-Links{rr}>{y}linktr.ee{rr}/{y}m4rktn
 {rr}\\_{r}Last-Update{rr}:{y}Nov{rr}/{y}2020
 """.format(r=ruks__,y=jruks,rr=_ruks,w=ruks_,D=rg,l=rf,B=ry),
 ])
 print(logo)
 print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-print(jruks+'['+_ruks+'1'+jruks+']'+ruks__+' running Checker ;')
-print(jruks+'['+_ruks+'2'+jruks+']'+ruks__+' Developer channel ;')
+print(erhab+'['+_SHAFO+'1'+erhab+']'+shafo__+' running Checker ;')
+print(erhab+'['+_SHAFO+'2'+erhab+']'+shafo__+' Developer channel ;')
 print('')
 ruks = input(jruks+'['+_ruks+'+'+jruks+']'+ruks__+' Choose ! -> ;'+BGreen)
 id = input(jruks+'['+_ruks+'+'+jruks+']'+ruks__+' ID TELEGRAM ! -> ;'+BGreen)
 print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 ru = ('{"account_created": false, "errors": {"email": [{"message": "Too many accounts are using a@gmail.com.", "code": "email_sharing_limit"}], "__all__": [{"message": "Create a password at least 6 characters long.", "code": "too_short_password"}]}, "dryrun_passed": false, "username_suggestions": [], "status": "ok", "error_type": "form_validation_error"}')
-ruksz=' 𝐓𝐞𝐥𝐞 :@RUKS3 ☆ @DIBIBl'
+ruksz=' 𝐓𝐞𝐥𝐞 :@SHAFO ☆ @erh4b'
 def Code_ruks():    
     if ruks =='1':
         Number = 0
